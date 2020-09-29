@@ -5,6 +5,8 @@ import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { CalendarEvent } from './CalendarEvent';
 import { CalendarModal } from './CalendarModal';
+import { useDispatch } from 'react-redux';
+import { uiOpenModal } from '../../actions/ui';
 
 const localizer = momentLocalizer( moment );
 
@@ -22,9 +24,10 @@ const events = [{
 export const CalendarScreen = () => {
 
   const [ lastView, setLastView ] = useState( localStorage.getItem( 'lastView' ) || 'month' );
+  const dispatch = useDispatch();
 
   const onDoubleClick = ( e ) => {
-
+    dispatch( uiOpenModal() );
   }
 
   const onSelectEvent = ( e ) => {
