@@ -105,7 +105,7 @@ export const CalendarModal = () => {
         id: new Date().getTime(),
         user: {
           _id: '123',
-          name: 'Yuyo'
+          name: 'Watame'
         }
       }));
     }
