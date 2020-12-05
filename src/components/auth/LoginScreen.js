@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { startLogin } from '../../actions/auth';
 import { useForm } from '../../hooks/useForm';
 import './login.css';
 
@@ -7,7 +8,7 @@ export const LoginScreen = () => {
 
   const [ formLoginValues, handleLoginInputChange ] = useForm({
     lEmail: 'yousay.sd@gmail.com',
-    lPassword: '123456'
+    lPassword: '1234566'
   });
 
   const { lEmail, lPassword } = formLoginValues;
@@ -15,7 +16,7 @@ export const LoginScreen = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    dispatch(lEmail, lPassword);
+    dispatch(startLogin(lEmail, lPassword));
   } 
 
   return (
@@ -49,6 +50,9 @@ export const LoginScreen = () => {
                 type="password"
                 className="form-control"
                 placeholder="Contraseña"
+                name="lPassword"
+                value={ lPassword } 
+                onChange={ handleLoginInputChange }
               />
 
             </div>
