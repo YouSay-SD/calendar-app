@@ -9,13 +9,13 @@ import './login.css';
 export const LoginScreen = () => {
 
   const [ formLoginValues, handleLoginInputChange ] = useForm({
-    lEmail: 'yousay.sd@gmail.com',
+    lEmail: 'test@gmail.com',
     lPassword: '1234566'
   });
 
   const [ formRegisterValues, handleRegisterInputChange ] = useForm({
-    rName: 'YouSay5',
-    rEmail: 'yousay.sd.5@gmail.com',
+    rName: 'test1',
+    rEmail: 'test1@gmail.com',
     rPassword1: '1234566',
     rPassword2: '1234566'
   });
