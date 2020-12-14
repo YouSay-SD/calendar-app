@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 import { startLogin, startRegister } from '../../actions/auth';
+import { eventClearActiveEvent } from '../../actions/events';
 import { useForm } from '../../hooks/useForm';
 import './login.css';
 
@@ -37,6 +38,11 @@ export const LoginScreen = () => {
 
     dispatch(startRegister(rEmail, rPassword1, rName));
   }
+
+  // Clear Active Event
+  useEffect(() => {
+    dispatch(eventClearActiveEvent()); 
+  }, [dispatch])
 
   return (
 

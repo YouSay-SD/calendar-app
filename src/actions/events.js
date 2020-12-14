@@ -3,6 +3,7 @@ import { fetchWithToken } from "../helpers/fetch";
 import { prepareEvents } from "../helpers/prepareEvents";
 import { types } from "../types/types";
 
+// Event: Add New
 export const eventStartAddNew = (event) => {
   return async (dispatch, getState) => {    
     const { uid, name } = getState().auth;
@@ -40,6 +41,7 @@ export const eventClearActiveEvent = () => ({
   type: types.eventClearActiveEvent
 })
 
+// Event: Update
 export const eventStartUpdate = (event) => {
   return async (dispatch) => {
     try {
